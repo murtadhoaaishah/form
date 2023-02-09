@@ -4,43 +4,43 @@ import './App.css'
 
 function App() {
 
-  const initialNote = [
-    'hello', 'good morning'
-  ]
-  const [notes, setNotes] = useState(initialNote)
+  // const initialNote = [
+  //   'hello', 'good morning'
+  // ]
+  const [notes, setNotes] = useState([])
 
-  const [newNote, setNewNote] = useState("")
+  const [newNote, setNewNote] = useState(" ")
 
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // if (!newNote.trim()) return
+    if (!newNote.trim()) return
     setNotes(notes.concat(newNote))
     setNewNote('')
   }
-
   return (
     <div>
 
-      <form >
+      <form onSubmit={handleSubmit}>
         <p className='note-hdn'>Add note </p>
-        Add Not: {""}
+        Add Note: {" "}
         <input
           type="text"
           value={newNote}
-          onChange={e => setNewNote(e.target.value)}
+          onChange={(e) => setNewNote(e.target.value)}
         />
 
-        <button type='submit' onClick={handleSubmit}>Add</button>
+        <button type='submit'>Add</button>
         {
-          notes.map((note, nameIndex) => <div>
-            <li>
+          notes.map((note, noteIndex) =>
+            <li key={`note_${noteIndex}`}>
               <ul>{note}</ul>
             </li>
-          </div>)
+          )
         }
-        {notes}
+        <p>{notes}</p>
+        {console.log(value)}
       </form>
 
     </div>
