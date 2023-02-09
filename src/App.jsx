@@ -40,7 +40,7 @@ function App() {
           )
         }
         <p>{notes}</p>
-        {console.log(value)}
+        {/* {console.log(value)} */}
       </form>
 
     </div>
