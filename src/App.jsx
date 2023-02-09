@@ -4,12 +4,12 @@ import './App.css'
 
 function App() {
 
-  // const initialNote = [
-  //   'hello', 'good morning'
-  // ]
-  const [notes, setNotes] = useState([])
+  const greetings = [
+    'hello', 'good morning'
+  ]
+  const [notes, setNotes] = useState(greetings)
 
-  const [newNote, setNewNote] = useState(" ")
+  const [newNote, setNewNote] = useState('')
 
 
 
@@ -32,17 +32,22 @@ function App() {
         />
 
         <button type='submit'>Add</button>
+
+      </form>
+      <div className='notes'>
+
         {
           notes.map((note, noteIndex) =>
             <li key={`note_${noteIndex}`}>
+              {console.log(note)}
               <ul>{note}</ul>
             </li>
+
           )
         }
         <p>{notes}</p>
-        {/* {console.log(value)} */}
-      </form>
-
+        {/* {console.log(newNote)} */}
+      </div>
     </div>
   )
 }
