@@ -24,7 +24,6 @@ function App() {
 
       <form onSubmit={handleSubmit}>
         <p className='note-hdn'>Add note </p>
-        Add Note: {" "}
         <input
           type="text"
           value={newNote}
@@ -39,14 +38,11 @@ function App() {
         {
           notes.map((note, noteIndex) =>
             <li key={`note_${noteIndex}`}>
-              {console.log(note)}
               <ul>{note}</ul>
             </li>
 
           )
         }
-        <p>{notes}</p>
-        {/* {console.log(newNote)} */}
       </div>
     </div>
   )
